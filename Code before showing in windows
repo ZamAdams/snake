@@ -7,10 +7,10 @@ import java.util.*;
 
 public class MainFrame extends JFrame {
 
-	// Field
+    // Field
 	
-	static final int DEFAULT_FIELD_SIZE = 20;
-	static final Color DEFAULT_FIELD_COLOR = Color.DARK_GRAY;	
+    static final int DEFAULT_FIELD_SIZE = 20;
+    static final Color DEFAULT_FIELD_COLOR = Color.DARK_GRAY;	
     
     int fieldCellCount;
     Color fieldColor = Color.WHITE;
@@ -114,10 +114,6 @@ public class MainFrame extends JFrame {
             }
         }
 
-        g2.setColor(Color.RED);
-        Font font = new Font("Arial", Font.PLAIN, 50);
-        g2.setFont(font);
-        g2.drawString("Вы проиграли", 100, 200);
     }
 
     // Snake
