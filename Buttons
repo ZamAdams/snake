@@ -1,0 +1,43 @@
+//panel.setLayout(new BorderLayout());
+        panel.setSize(800,600);
+        panel.setLocation(200, 100);
+       // panel.setVisible(true);
+        
+        panel.setLayout(new BorderLayout());
+        
+        JPanel canvas = new JPanel();
+        
+        JPanel toolbar = new JPanel();
+        toolbar.setLayout(new FlowLayout());
+        
+        JButton Start = new JButton("Start");
+        JButton Switch = new JButton("Walls Switch");
+        
+        toolbar.add(Start);
+        
+        Start.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				start();
+			}
+		});
+        
+        toolbar.add(Switch);
+        
+        Switch.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				isCollidesWithWalls = true;
+				
+			}
+		});
+ 
+        
+        panel.add(toolbar, BorderLayout.EAST);
+        
+        panel.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                input(e.getKeyCode());
+            }
+        });
