@@ -1,0 +1,28 @@
+    void checkSnakeCollisionWithWalls() {
+        int head = snakeLength - 1;
+        int headX = snake[head][0];
+        int headY = snake[head][1];
+
+       if (isCollidesWithWalls) {
+	        if (!isInsideField(headX, headY)) {
+	            isPlaying = false;
+	        	}
+       		} 
+       	passingWalls();
+   	}
+    
+    void passingWalls() {
+        int head = snakeLength - 1;
+        int headX = snake[head][0];
+        int headY = snake[head][1];
+    	 if (headX==fieldCellCount) {
+	        	snake[head][0]=0;
+	        } else if (headY==fieldCellCount) {
+	        	snake[head][1] =0;
+	        } else if (headX<0) {
+	        	snake[head][0]=fieldCellCount;
+	        } else if (headY<0) {
+	        	snake[head][1]=fieldCellCount;
+	        }
+    	
+    }
