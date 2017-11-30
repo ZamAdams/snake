@@ -339,6 +339,7 @@ public class MainFrame extends JFrame {
         });
         
         add(panel);
+        panel.setLayout(new BorderLayout());
         
         
         // Control Panel
@@ -346,13 +347,27 @@ public class MainFrame extends JFrame {
         JPanel panel2 = new JPanel();
         
         panel.add(panel2, BorderLayout.SOUTH);
+        panel2.setBackground(null);
         
         // Button
         
-        JButton start = new JButton("Start");
-        panel2.add(start, BorderLayout.EAST);
+        JButton start = new JButton("START");
+        panel2.add(start, BorderLayout.SOUTH);
         
-        JCheckBox b1 = new JCheckBox("Do you need walls?");
+        start.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent arg0) {
+				
+				start();
+				update();
+				isPlaying = true;
+				
+				 
+				
+			}
+		});
+        
+        JCheckBox b1 = new JCheckBox("SET WALLS");
         panel2.add(b1, BorderLayout.EAST);
        
         b1.addActionListener(new ActionListener() {
@@ -362,12 +377,14 @@ public class MainFrame extends JFrame {
 				
 			}
 		});
-        b1.setVisible(true);
         
-        // Label
+   
         
-        JLabel L1 = new JLabel(textOnLabel);
-        panel2.add(L1);
+        // Label 
+        
+        // JLabel L1 = new JLabel(textOnLabel);
+        // panel2.add(L1);
+        
         
         // Timer
          
@@ -377,11 +394,12 @@ public class MainFrame extends JFrame {
                 repaint();
             }
         });
+    
 
         setUndecorated(true);
         //setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setSize(750, 650);
-        setLocation(300, 5);
+        setSize(650, 650);
+        setLocation(350, 20);
         setVisible(true);
         
   
@@ -394,7 +412,6 @@ public class MainFrame extends JFrame {
         new MainFrame();
         
     }
-    
  
     class DrawPanel extends JPanel {
         public DrawPanel() {
